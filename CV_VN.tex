@@ -1,0 +1,151 @@
+\documentclass[10pt,a4paper]{article}
+
+% Essential packages
+\usepackage[top=0.5cm, bottom=0.45cm, left=1.0cm, right=1.0cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+
+% Font và tiếng Việt với XeLaTeX
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{vietnamese}
+\setmainfont{Times New Roman} % hoặc font bạn thích
+
+% Không dùng opensans, không đổi familydefault
+
+% Define color palette
+\definecolor{primary}{RGB}{30, 50, 100}
+\definecolor{secondary}{RGB}{0, 128, 128}
+\definecolor{text}{RGB}{52, 52, 52}
+\definecolor{lightgray}{RGB}{240, 240, 240}
+\definecolor{darkgray}{RGB}{80, 80, 80}
+
+% Setup hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=secondary,
+    urlcolor=secondary,
+    pdftitle={NGUYEN NGUYEN HUY - Resume}
+}
+
+% Customize section titles
+\titleformat{\section}
+    {\fontsize{12}{14}\bfseries\color{primary}}
+    {}{0em}
+    {}
+    [{\color{lightgray}\titlerule[0.5pt]}]
+\titlespacing{\section}{0pt}{8pt}{5pt}
+
+
+% Custom commands
+\newcommand{\contactinfo}[3]{%
+    \makebox[0pt][l]{\textcolor{secondary}{#1}}%
+    \hspace{16pt}\href{#2}{#3}%
+}
+
+\newcommand{\projectitem}[5]{%
+    \noindent\begin{tcolorbox}[
+        colback=white,
+        colframe=lightgray,
+        boxrule=0.3pt,
+        arc=2pt,
+        top=3pt,
+        bottom=3pt,
+        left=6pt,
+        right=6pt
+    ]
+        \noindent\textbf{\color{primary}#1} \hfill \textcolor{darkgray}{\scriptsize#2}\\[1pt]
+        {\small\color{secondary}#3}\\[1pt]
+        {\scriptsize\color{darkgray}#4}\\[3pt]
+        #5
+    \end{tcolorbox}
+}
+
+% Begin document
+\begin{document}
+\pagestyle{empty}
+
+% Header Section
+\begin{center}
+    \textbf{\fontsize{22}{26}\selectfont\color{primary}NGUYEN NGUYEN HUY}\\[2pt]
+    \textcolor{secondary}{\normalsize Kỹ sư Dữ liệu}\\[6pt]
+    
+    % Contact Information - first row (phone, email, location)
+    \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r@{}}
+        \contactinfo{\faPhone}{tel:+84905302117}{+84905302117} &
+        \contactinfo{\faEnvelope}{mailto:nghuy29032004@gmail.com}{nghuy29032004@gmail.com} &
+        \contactinfo{\faGlobe}{}{Thủ Đức, TP. Hồ Chí Minh} \\
+    \end{tabular*}
+    
+    % GitHub link on new line, aligned left
+    \vspace{2pt}
+    \makebox[\textwidth][l]{%
+        \contactinfo{\faGithub}{https://github.com/nghuy2903}{github.com/nghuy2903}%
+    }
+\end{center}
+
+
+% Project Experience
+\section{KINH NGHIỆM DỰ ÁN}
+
+\projectitem{Ứng dụng ASP.NET MVC quản lý và bán xe máy trực tuyến (Dự án tự học)}{Tháng 11/2024 -- Tháng 12/2024}
+    {SQL Server • ASP.NET MVC • HTML • CSS • C\# • JavaScript}
+    {\href{https://github.com/nghuy2903/ASP.Net_MVC_motobikeStore}{\textcolor{secondary}{\faGithub\ GitHub}} | \href{YOUR_YOUTUBE_DEMO_LINK}{\textcolor{secondary}{\faYoutube\ Demo}}}
+    {\begin{itemize}[leftmargin=12pt,itemsep=1pt,parsep=0pt,topsep=0pt,after=\vspace{-2pt},label={•}]
+        \item Phát triển hệ thống quản lý và bán xe máy với hai vai trò người dùng chính.
+        \item Cho phép khách hàng duyệt, tìm kiếm, lựa chọn và đặt trước các mẫu xe yêu thích một cách thuận tiện.
+        \item Triển khai các tính năng quản trị bao gồm thêm mới, xóa, chỉnh sửa và xuất báo cáo đa dạng về các loại xe.
+    \end{itemize}}
+
+\vspace{3pt}
+
+\projectitem{Ứng dụng học tiếng Anh với AI (Dự án nhóm 4 thành viên)}{Tháng 2/2025 -- Hiện tại}
+    {MongoDB • Flutter (Dart) • Kiến trúc sạch (Clean Architecture) • RESTful API}
+    {\href{https://github.com/dungken/speaking_english_with_ai_app}{\textcolor{secondary}{\faGithub\ GitHub}} | \href{YOUR_YOUTUBE_DEMO_LINK}{\textcolor{secondary}{\faYoutube\ Demo}}}
+    {\begin{itemize}[leftmargin=12pt,itemsep=1pt,parsep=0pt,topsep=0pt,after=\vspace{-2pt},label={•}]
+        \item Ứng dụng học tiếng Anh đa nền tảng với tính năng luyện nói và phản hồi bằng trí tuệ nhân tạo.
+        \item Tích hợp chuyển giọng nói thành văn bản cùng phản hồi AI về phát âm, ngữ pháp và sự lưu loát.
+        \item Nâng cao kỹ năng giao tiếp và phát âm qua các bài luyện hội thoại và mô tả hình ảnh thực tế.
+        \item Xây dựng giao diện người dùng đáp ứng với bố cục thích ứng và phân tích tiến độ học tập.
+    \end{itemize}}
+
+\vspace{6pt}
+
+% Additional Sections
+\section{HỌC VẤN}
+\noindent\textbf{Sinh viên năm ba ngành Công nghệ Thông tin} \hfill \textcolor{darkgray}{\small}\\[1pt]
+\textcolor{darkgray}{\small Trường Đại học Giao thông Vận tải, TP. Hồ Chí Minh}
+
+\vspace{6pt}
+
+\section{KỸ NĂNG}
+\begin{minipage}[t]{0.5\textwidth}
+    \textbf{\small Ngôn ngữ lập trình} \\[1pt]
+    - C++, Python, Dart và JavaScript \\
+    - Tham gia các cuộc thi lập trình ICPC \\
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+    \textbf{\small Cơ sở dữ liệu} \\[1pt]
+    - SQL Server, MongoDB
+\end{minipage}
+
+\vspace{8pt}
+
+\begin{minipage}[t]{0.5\textwidth}
+    \textbf{\small Công cụ và nền tảng} \\[1pt]
+    - Git, Jira, Notion 
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+    \textbf{\small Kỹ năng mềm} \\[1pt]
+    - Giải quyết vấn đề, Làm việc nhóm, Giao tiếp, Đọc hiểu tiếng Anh chuyên ngành
+\end{minipage}
+
+\end{document}
