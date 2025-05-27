@@ -1,0 +1,148 @@
+% Professional CV - Single Page Optimized
+\documentclass[10pt,a4paper]{article}
+
+% Essential packages
+\usepackage[top=0.5cm, bottom=0.45cm, left=1.0cm, right=1.0cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+
+% Use modern font
+\usepackage[defaultsans,scale=0.95]{opensans}
+\renewcommand\familydefault{\sfdefault}
+\linespread{1.12}
+
+% Define color palette
+\definecolor{primary}{RGB}{30, 50, 100}
+\definecolor{secondary}{RGB}{0, 128, 128}
+\definecolor{text}{RGB}{52, 52, 52}
+\definecolor{lightgray}{RGB}{240, 240, 240}
+\definecolor{darkgray}{RGB}{80, 80, 80}
+
+% Setup hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=secondary,
+    urlcolor=secondary,
+    pdftitle={NGUYEN NGUYEN HUY - Resume}
+}
+
+% Customize section titles
+\titleformat{\section}
+    {\fontsize{12}{14}\bfseries\color{primary}}
+    {}{0em}
+    {}
+    [{\color{lightgray}\titlerule[0.5pt]}]
+\titlespacing{\section}{0pt}{8pt}{5pt}
+
+% Custom commands
+\newcommand{\contactinfo}[3]{%
+    \makebox[0pt][l]{\textcolor{secondary}{#1}}%
+    \hspace{16pt}\href{#2}{#3}%
+}
+
+\newcommand{\projectitem}[5]{%
+    \noindent\begin{tcolorbox}[
+        colback=white,
+        colframe=lightgray,
+        boxrule=0.3pt,
+        arc=2pt,
+        top=3pt,
+        bottom=3pt,
+        left=6pt,
+        right=6pt
+    ]
+        \noindent\textbf{\color{primary}#1} \hfill \textcolor{darkgray}{\scriptsize#2}\\[1pt]
+        {\small\color{secondary}#3}\\[1pt]
+        {\scriptsize\color{darkgray}#4}\\[3pt]
+        #5
+    \end{tcolorbox}
+}
+
+% Begin document
+\begin{document}
+\pagestyle{empty}
+
+% Header Section
+\begin{center}
+    \textbf{\fontsize{22}{26}\selectfont\color{primary}NGUYEN NGUYEN HUY}\\[2pt]
+    \textcolor{secondary}{\normalsize Data Engineer}\\[6pt]
+    
+    % Contact Information - first row (phone, email, location)
+    \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r@{}}
+        \contactinfo{\faPhone}{tel:+84905302117}{+84905302117} &
+        \contactinfo{\faEnvelope}{mailto:nghuy29032004@gmail.com}{nghuy29032004@gmail.com} &
+        \contactinfo{\faGlobe}{}{Thu Duc, HCMC} \\
+    \end{tabular*}
+    
+    % GitHub link on new line, aligned left
+    \vspace{2pt}
+    \makebox[\textwidth][l]{%
+        \contactinfo{\faGithub}{https://github.com/nghuy2903}{github.com/nghuy2903}%
+    }
+\end{center}
+
+
+% Project Experience
+\section{PROJECT EXPERIENCE}
+
+\projectitem{ASP.NET MVC application for online motorbike sales and management (Self-learning project)}{Nov 2024 -- Dec 2024}
+    {SQL Server • ASP.NET MVC • HTML • CSS • C\# • JavaScript}
+    {\href{https://github.com/nghuy2903/ASP.Net_MVC_motobikeStore}{\textcolor{secondary}{\faGithub\ GitHub}} | \href{YOUR_YOUTUBE_DEMO_LINK}{\textcolor{secondary}{\faYoutube\ Demo}}}
+    {\begin{itemize}[leftmargin=12pt,itemsep=1pt,parsep=0pt,topsep=0pt,after=\vspace{-2pt},label={•}]
+        \item Motorbike sales and management system with two main user roles
+        \item Allows customers to browse, search, select, and reserve their favorite motorbikes.
+        \item Admin is responsible for core operations including adding, deleting, editing, and exporting reports on various vehicle types.
+    \end{itemize}}
+
+\vspace{3pt}
+
+\projectitem{Speaking English with AI (Collaborative project with a team of 4 developers)}{Feb 2025 -- Present}
+    {MongoDB • Flutter (Dart) • Clean Architecture • RESTful API}
+    {\href{https://github.com/dungken/speaking_english_with_ai_app}{\textcolor{secondary}{\faGithub\ GitHub}} | \href{YOUR_YOUTUBE_DEMO_LINK}{\textcolor{secondary}{\faYoutube\ Demo}}}
+    {\begin{itemize}[leftmargin=12pt,itemsep=1pt,parsep=0pt,topsep=0pt,after=\vspace{-2pt},label={•}]
+        \item Cross-platform English learning app with AI-powered conversation practice and feedback.
+        \item Integrated speech-to-text with AI-driven feedback on pronunciation, grammar, and fluency.
+        \item Improved communication and pronunciation skills in real-life situations through two main features: conversation practice and image description.
+        \item Built responsive UI with adaptive layouts and progress tracking analytics.
+    \end{itemize}}
+
+\vspace{6pt}
+
+% Additional Sections
+\section{EDUCATION}
+\noindent\textbf{Third-year student of Bachelor of Science in Information Technology} \hfill \textcolor{darkgray}{\small}\\[1pt]
+\textcolor{darkgray}{\small University of Transport and Communications, Ho Chi Minh City}
+
+\vspace{6pt}
+
+\section{SKILL}
+\begin{minipage}[t]{0.5\textwidth}
+    \textbf{\small Programming Languages} \\[1pt]
+    - C++, Python, Dart, and JavaScript \\
+    - Participated in ICPC (Programming Contest) \\
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+    \textbf{\small Database} \\[1pt]
+    - SQL Server, MongoDB
+\end{minipage}
+
+\vspace{8pt}
+
+\begin{minipage}[t]{0.5\textwidth}
+    \textbf{\small Tools \& Platforms} \\[1pt]
+    - Git, Jira, Notion 
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+    \textbf{\small Soft Skills} \\[1pt]
+    - Problem Solving, Teamwork, Communication, Technical English Reading
+\end{minipage}
+
+\end{document}
